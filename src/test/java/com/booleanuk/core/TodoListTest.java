@@ -231,9 +231,6 @@ class TodoListTest {
     @Test
     public void getAllTasksOrderedWhenNoTasksExist() {
         this.tasks = new LinkedHashMap<>();
-        tasks.put("Eat", false);
-        tasks.put("Work out", false);
-        tasks.put("Do some programming today", false);
 
         TodoList tl = new TodoList(tasks);
 
