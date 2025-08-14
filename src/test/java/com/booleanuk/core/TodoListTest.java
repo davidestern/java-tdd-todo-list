@@ -104,7 +104,7 @@ class TodoListTest {
     getIncompleteTasks
      */
     @Test
-    public void getIncompleteTasksWhenCompletedTasksExist() {
+    public void getIncompleteTasksWhenIncompleteTasksExist() {
         this.tasks = new HashMap<>();
         tasks.put("Eat", true);
         tasks.put("Work out", true);
@@ -116,7 +116,7 @@ class TodoListTest {
     }
 
     @Test
-    public void getIncompleteTasksWhenCompletedTasksDontExist() {
+    public void getIncompleteTasksWhenIncompleteTasksDontExist() {
         this.tasks = new HashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
