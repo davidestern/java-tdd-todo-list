@@ -3,7 +3,7 @@ package com.booleanuk.core;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,7 +16,7 @@ class TodoListTest {
      */
     @Test
     public void addTaskNotAlreadyInTaskListShouldReturnTrue() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
 
         TodoList tl = new TodoList(tasks);
 
@@ -27,7 +27,7 @@ class TodoListTest {
 
     @Test
     public void addTaskAlreadyInTaskListShouldReturnFalse() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
 
@@ -41,7 +41,7 @@ class TodoListTest {
 
     @Test
     public void addTaskInvalidNameShouldReturnNull() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
 
         TodoList tl = new TodoList(tasks);
 
@@ -55,7 +55,7 @@ class TodoListTest {
      */
     @Test
     public void getTasksTaskMapNotEmpty() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
 
@@ -66,7 +66,7 @@ class TodoListTest {
 
     @Test
     public void getTasksWhenMapIsEmpty() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
 
         TodoList tl = new TodoList(tasks);
 
@@ -78,7 +78,7 @@ class TodoListTest {
      */
     @Test
     public void getCompletedTasksWhenCompletedTasksExist() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", true);
         tasks.put("Work out", true);
         tasks.put("Do some programming", false);
@@ -90,7 +90,7 @@ class TodoListTest {
 
     @Test
     public void getCompletedTasksWhenCompletedTasksDontExist() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
         tasks.put("Do some programming", false);
@@ -105,7 +105,7 @@ class TodoListTest {
      */
     @Test
     public void getIncompleteTasksWhenIncompleteTasksExist() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", true);
         tasks.put("Work out", true);
         tasks.put("Do some programming", false);
@@ -117,7 +117,7 @@ class TodoListTest {
 
     @Test
     public void getIncompleteTasksWhenIncompleteTasksDontExist() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
         tasks.put("Do some programming", true);
@@ -132,7 +132,7 @@ class TodoListTest {
      */
     @Test
     public void changeTaskStatusWhenTaskExistsAndIsIncomplete() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
 
         TodoList tl = new TodoList(tasks);
@@ -145,7 +145,7 @@ class TodoListTest {
 
     @Test
     public void changeTaskStatusWhenTaskExistsAndIsCompleted() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", true);
 
         TodoList tl = new TodoList(tasks);
@@ -158,7 +158,7 @@ class TodoListTest {
 
     @Test
     public void changeTaskStatusWhenTasksDoesNotExist() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
 
         TodoList tl = new TodoList(tasks);
 
@@ -171,21 +171,21 @@ class TodoListTest {
      */
     @Test
     public void searchTaskResultFound() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
         tasks.put("Do some programming today", false);
 
         TodoList tl = new TodoList(tasks);
 
-        Assertions.assertEquals(List.of("Eat", "Work out", "Do some programming"), tl.searchTask("t"));
-        Assertions.assertEquals(List.of("Work out", "Do some programming"), tl.searchTask("o"));
+        Assertions.assertEquals(List.of("Eat", "Work out", "Do some programming today"), tl.searchTask("t"));
+        Assertions.assertEquals(List.of("Work out", "Do some programming today"), tl.searchTask("o"));
         Assertions.assertEquals(List.of("Eat"), tl.searchTask("eat"));
     }
 
     @Test
     public void searchTaskResultNotFound() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
         tasks.put("Do some programming today", false);
@@ -202,7 +202,7 @@ class TodoListTest {
      */
     @Test
     public void removeTaskThatExists() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
         tasks.put("Do some programming today", false);
@@ -216,7 +216,7 @@ class TodoListTest {
 
     @Test
     public void removeTaskThatDoesNotExist() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
 
         TodoList tl = new TodoList(tasks);
@@ -230,7 +230,7 @@ class TodoListTest {
      */
     @Test
     public void getAllTasksOrderedWhenNoTasksExist() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
         tasks.put("Do some programming today", false);
@@ -243,7 +243,7 @@ class TodoListTest {
 
     @Test
     public void getAllTasksOrderedAscending() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
         tasks.put("Do some programming today", false);
@@ -255,7 +255,7 @@ class TodoListTest {
 
     @Test
     public void getAllTasksOrderedDescending() {
-        this.tasks = new HashMap<>();
+        this.tasks = new LinkedHashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
         tasks.put("Do some programming today", false);
