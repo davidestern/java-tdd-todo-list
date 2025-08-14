@@ -93,7 +93,7 @@ class TodoListTest {
         this.tasks = new HashMap<>();
         tasks.put("Eat", false);
         tasks.put("Work out", false);
-        tasks.put("Do some programming", true);
+        tasks.put("Do some programming", false);
 
         TodoList tl = new TodoList(tasks);
 
