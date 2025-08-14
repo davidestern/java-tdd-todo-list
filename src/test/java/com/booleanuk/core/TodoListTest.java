@@ -192,9 +192,9 @@ class TodoListTest {
 
         TodoList tl = new TodoList(tasks);
 
-        Assertions.assertEquals(List.of(), tl.searchTask("z"));
-        Assertions.assertEquals(List.of(), tl.searchTask("zx"));
-        Assertions.assertEquals(List.of(), tl.searchTask(":123!"));
+        Assertions.assertEquals(List.of("No tasks found"), tl.searchTask("z"));
+        Assertions.assertEquals(List.of("No tasks found"), tl.searchTask("zx"));
+        Assertions.assertEquals(List.of("No tasks found"), tl.searchTask(":123!"));
     }
 
     /*
