@@ -62,7 +62,6 @@ class TodoListTest {
         TodoList tl = new TodoList(tasks);
 
         Assertions.assertEquals(List.of("Eat", "Work out"), tl.getTasks());
-        Assertions.assertEquals(List.of("eat", "work out"), tl.getTasks());
     }
 
     @Test
@@ -87,7 +86,6 @@ class TodoListTest {
         TodoList tl = new TodoList(tasks);
 
         Assertions.assertEquals(List.of("Eat", "Work out"), tl.getCompletedTasks());
-        Assertions.assertEquals(List.of("eat", "work out"), tl.getCompletedTasks());
     }
 
     @Test
@@ -115,7 +113,6 @@ class TodoListTest {
         TodoList tl = new TodoList(tasks);
 
         Assertions.assertEquals(List.of("Do some programming"), tl.getIncompleteTasks());
-        Assertions.assertEquals(List.of("do some programming"), tl.getIncompleteTasks());
     }
 
     @Test
@@ -128,7 +125,6 @@ class TodoListTest {
         TodoList tl = new TodoList(tasks);
 
         Assertions.assertEquals(List.of("Eat", "Work out"), tl.getIncompleteTasks());
-        Assertions.assertEquals(List.of("eat", "work out"), tl.getIncompleteTasks());
     }
 
     /*
